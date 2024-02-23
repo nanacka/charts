@@ -34,8 +34,8 @@ class StackedBarChart {
 
 		// Drawing the bars:
 		let numBars = this.data.length;
-		console.log(numBars)
-		console.log(this.barColour)
+		//console.log(numBars)
+		//console.log(this.barColour)
 
 		let gap = (this.chartWidth - (numBars * this.barWidth))/(numBars +1);
 		let scale = this.chartHeight/max(this.data.map(d=>d[this.yValue]))
@@ -43,7 +43,11 @@ class StackedBarChart {
 		let labels = this.data.map(d => d[this.xValue]);
 
 		let math = (((gap*numBars)+1)+(numBars*this.barWidth));
-		console.log(math);
+		//console.log(math);
+
+		let numStacks = this.barSections.length;
+
+		console.log(numStacks)
 
 		//push()
 //
@@ -79,9 +83,20 @@ class StackedBarChart {
         push()
         translate(gap,0);
         for(let i=0; i<numBars; i++){
-            fill(this.barColour[i])
+            fill(this.barColour)
             noStroke()
-            rect (0,0,this.barWidth, -this.data[i][this.yValue]);
+			push()
+			for(let j=0; j<numStacks; j++){
+				fill(this.barColour)
+				rect (0,0,this.barWidth, -this.data[i][this.barSections[j]]);
+				console.log(this.data[i])
+				console.log([this.barSections[j]])
+				console.log(this.data[i][this.barSections[j]])
+				translate(0,this.barSections[j])
+				//yOffset += barSections[j]; 
+			}
+			pop()
+            //rect (0,0,this.barWidth, -this.data[i][this.yValue]);
             fill(this.labelColour)
             textSize(10);
             textAlign(LEFT, CENTER)

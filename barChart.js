@@ -34,8 +34,8 @@ class BarChart {
 
 		// Drawing the bars:
 		let numBars = this.data.length;
-		console.log(numBars)
-		console.log(this.barColour)
+		//console.log(numBars)
+		//console.log(this.barColour)
 
 		let gap = (this.chartWidth - (numBars * this.barWidth))/(numBars +1);
 		let scale = this.chartHeight/max(this.data.map(d=>d[this.yValue]))
@@ -43,7 +43,7 @@ class BarChart {
 		let labels = this.data.map(d => d[this.xValue]);
 
 		let math = (((gap*numBars)+1)+(numBars*this.barWidth));
-		console.log(math);
+		//console.log(math);
 
 		//push()
 //

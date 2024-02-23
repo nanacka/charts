@@ -57,8 +57,8 @@ function setup() {
 		yPos: 500,
 		axisLineColour: "#ff0000",
 		barWidth: 20,
-		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00","#0000ff", "#00ffff", "#ffff00", "#00ff00"],
-		barSections: ["No Language", "One Language", "Two Languages", "Three or more languages"],
+		barColour: "#0000ff",
+		barSections: ["No other language (%)", "One language (%)", "Two languages (%)", "Three languages or more (%)"],
 		axisThickness: 3,
 		labelTextSize: 20,
 		labelPadding: 10,
@@ -88,7 +88,7 @@ function setup() {
 	//console.log(cleanData);
 
 	//console.log(numRows);
-	console.log(horizontalBarChart)
+	//console.log(horizontalBarChart)
 
 	barCharts.push(new BarChart(barChart01));
 	barCharts.push(new HorizontalBarChart(horizontalBarChart));
