@@ -57,7 +57,7 @@ function setup() {
 		yPos: 500,
 		axisLineColour: "#ff0000",
 		barWidth: 20,
-		barColour: "#0000ff",
+		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00"],
 		barSections: ["No other language (%)", "One language (%)", "Two languages (%)", "Three languages or more (%)"],
 		axisThickness: 3,
 		labelTextSize: 20,

@@ -87,12 +87,12 @@ class StackedBarChart {
             noStroke()
 			push()
 			for(let j=0; j<numStacks; j++){
-				fill(this.barColour)
+				fill(this.barColour[j])
 				rect (0,0,this.barWidth, -this.data[i][this.barSections[j]]);
 				console.log(this.data[i])
 				console.log([this.barSections[j]])
 				console.log(this.data[i][this.barSections[j]])
-				translate(0,this.barSections[j])
+				translate(0,-this.data[i][this.barSections[j]])
 				//yOffset += barSections[j]; 
 			}
 			pop()
