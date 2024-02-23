@@ -1,4 +1,4 @@
-class BarChart {
+class StackedBarChart {
 	constructor(obj) {
 		this.data = obj.data;
 		this.yValue = obj.yValue;
@@ -81,7 +81,7 @@ class BarChart {
         for(let i=0; i<numBars; i++){
             fill(this.barColour[i])
             noStroke()
-            rect (0,0,this.barWidth, -this.data[i][this.yValue]*scale);
+            rect (0,0,this.barWidth, -this.data[i][this.yValue]);
             fill(this.labelColour)
             textSize(10);
             textAlign(LEFT, CENTER)
