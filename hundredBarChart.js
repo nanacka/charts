@@ -111,10 +111,10 @@ class StackedBarChart {
 
         //This draws the vertical elements
 
-        let tickGap = this.chartHeight/5;
-        let tickValue = max(this.data.map(d=>d[this.yValue]));
 
-        for(let i=0; i<=5; i++){
+        let tickValue = max(10);
+        let tickGap = 10;
+        for(let i=0; i<=10; i++){
             stroke('#fff');
 			strokeWeight(this.axisThickness)
             line(0,-i*tickGap,-20,-i*tickGap);
