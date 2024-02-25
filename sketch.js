@@ -135,15 +135,12 @@ function setup() {
 		xPos: 400,
 		yPos: 350,
 		//axisLineColour: "#ff0000",
-		//barWidth: 20,
 		//barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
 		//axisThickness: 1,
-		//barColour: "#416096"
+		//Colour: "#416096"
 		//labelTextSize: 20,
 		//labelPadding: 70,
 		//labelColour: "#000099",
-		//labelRotation: 45,
-		//numTicks: 5
 	}
 	//console.log(cleanData);
 
@@ -163,9 +160,6 @@ function setup() {
 	console.log(barCharts)
 
 }
-
-
-
 
 
 

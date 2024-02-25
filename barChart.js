@@ -117,37 +117,8 @@ class BarChart {
         
         pop ();
 
-		//STACKED
-		
-		//draw rectangle, for each bar section, draw in a rectangle of the value,
-		// translate to the top of that bar, draw another bar of value
-		// ones all sections are done, translate the gap, then do it again
 
-		//let bars = this.data.length;
-		//let gap = (this.chartWidth - (bars * this.barWidth))/(bars +1);
-		//let stacks = this.barSections.length
-		////let barValue;
-		//console.log(bars,gap)
 
-		//push();
-		//translate(gap, 0)
-		//for(let i=0; i<bars; i++){
-		//	
-		//	push();
-		//	for(let j=0; j<this.stacks; i++){
-		//		fill("#000000")
-		//		rect(0,0, this.barWidth, -this.data[i][this.barSections[j]])
-		//		//console.log(this.barSections[j])
-		//		//Translate to the top of that rectangle, draw another on top
-		//		//translate(0,this.data[j][this.yValue],this.barWidth,this.data[j][this.yValue])
-		//	}
-		//	pop();
-
-		//	translate(gap+this.barWidth, 0)
-		//	//rect(0,0, this.barWidth, -20)
-		//	console.log(stacks)
-		//	//console.log(bars)
-		//}
 
 		//pop();
 

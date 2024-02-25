@@ -9,64 +9,53 @@ class PieChart{
 		this.xPos = obj.xPos;
 		this.yPos = obj.yPos;
 		//this.axisLineColour = obj.axisLineColour;
-		//this.barWidth = obj.barWidth;
-		//this.barColour = obj.barColour;
-		//this.barSections= obj.barSections;
+		//this.Colour = obj.Colour;
 		//this.labelTextSize = obj.labelTextSize
 		//this.labelPadding= obj.labelPadding;
 		//this.labelColour= obj.labelColour;
-		//this.labelRotation= obj.labelRotation;
-		//this.numTicks = obj.numTicks		
-
 		//this.axisThickness = obj.axisThickness;
 	}
 
     render(){
 
         let slices = this.yValue.length
-        let totals =[]
-        let sliceValue = []
         let sums = []
-
         console.log(this.yValue[0].length)
         console.log(this.yValue.length)
         console.log(this.yValue)
         console.log(this.yValue[0])
-
         console.log(this.data.length)
-
         let numRows = this.data.length;
-        // i want to get the sums of each of the columns,
-        //go through each column, add the value to a sum
-        // make them a percentage of 360
-
+        let total = 0;
 
         for(let i=0;i<slices; i++){
-
+          let sum = 0;
             for(let j=0;j<numRows; j++){
-                
-              sliceValue.push(this.data[i][this.yValue[j]])
-              //sums+= sliceValue[j]
-              console.log(sliceValue)
+              //converts the string value into a float
+              let value = parseFloat(this.data[j][this.yValue[i]]);
+              sum += value;
+              console.log(sum)
+              
             }
-
+            sums.push(sum)
+            console.log(sums)
+            total+=sums[i]
+            console.log(total)
         }
 
+        let angles = [];
 
+        for(let k=0; k<sums.length; k++){
+          let angle = 0;
+          angle = (sums[k]/total)*360;
+          console.log(angle)
+          angles.push(angle)
+          console.log(angles)
+        }
 
+        translate(this.xPos,this.yPos)
+        pieChart(300, angles);
 
-        let angles = [30, 10, 45, 35, 60, 38, 75, 67];
-
-        //function setup() {
-        //  
-        //  noStroke();
-        //  noLoop(); // Run once and stop
-        //}
-
-        //function draw() {
-          translate(this.xPos,this.yPos)
-          pieChart(300, angles);
-        //}
 
         function pieChart(diameter, data) {
           let lastAngle = 0;
@@ -79,10 +68,11 @@ class PieChart{
               diameter,
               diameter,
               lastAngle,
-              lastAngle + radians(angles[i])
+              lastAngle + radians(data[i])
             );
-            lastAngle += radians(angles[i]);
+            lastAngle += radians(data[i]);
           }
         }
+
     }
 }
