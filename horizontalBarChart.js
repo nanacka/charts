@@ -29,8 +29,10 @@ class HorizontalBarChart {
 		noFill();
 		stroke(this.axisLineColour);
 		strokeWeight(this.axisThickness);
+
 		line(0, 0, 0, this.chartHeight);
 		line(0, 0, this.chartWidth, 0);
+
 
 		// Drawing the bars:
 		let numBars = this.data.length;
@@ -92,6 +94,10 @@ class HorizontalBarChart {
 
         
         pop ();
+
+
+		
+
 
         //this.drawHAxis();
 		//this.drawVAxis();
