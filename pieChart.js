@@ -52,15 +52,29 @@ class PieChart{
           angles.push(angle)
         }
 
+
+        let percents = []
+
+        for(let k=0; k<sums.length; k++){
+          let percent = 0;
+          percent = ((angles[k]/360)*100)+"%";
+          percents.push(percent)
+          console.log(percents)
+        }
+
+
         translate(this.xPos,this.yPos)
 
         for(let i=0; i<this.yValue.length; i++){
           fill("#000000")
-                textSize(10);
-                textAlign(RIGHT, CENTER)
-          text(this.yValue[i], -80, -40*i)
-          fill("#000000")
-          rect(-70,(-40*i)-10,20,20)
+          textSize(10);
+          textAlign(RIGHT, CENTER)
+          text(this.yValue[i], -50, -40*i)
+          let gray = map(i, 0, this.yValue.length, 0, 255);
+          fill(gray);
+          rect(-40,(-40*i)-10,20,20)
+          textAlign(LEFT, CENTER)
+          text(percents[i], -10 , -40*i)
     
         }
         
@@ -73,8 +87,8 @@ class PieChart{
             let gray = map(i, 0, data.length, 0, 255);
             fill(gray);
             arc(
-              width / 2,
-              height / 2,
+              width / 10,
+              height / 10,
               diameter,
               diameter,
               lastAngle,

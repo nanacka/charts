@@ -14,7 +14,6 @@ class HorizontalBarChart {
 		this.labelTextSize = obj.labelTextSize
 		this.labelPadding= obj.labelPadding;
 		this.labelColour= obj.labelColour;
-		this.labelRotation= obj.labelRotation
 		this.titleTextSize = obj.titleTextSize;		
 		this.numTicks = obj.numTicks		
 		this.axisThickness=obj.axisThickness

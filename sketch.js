@@ -13,7 +13,6 @@ let backgroundColour = "#e3e3e3";
 
 function preload() {
 	data = loadTable("data/languages_region_pivot.csv", "csv", "header");
-	//region_data =  loadTable("data/languages_regions.csv", "csv", "header");
 
 }
 
@@ -39,7 +38,6 @@ function setup() {
 		barWidth: 20,
 		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
 		axisThickness: 1,
-		//barColour: "#416096"
 		labelTextSize: 20,
 		labelPadding: 10,
 		labelColour: "#000099",
@@ -76,7 +74,7 @@ function setup() {
 		xValue: "Region",
 		chartWidth: 200,
 		chartHeight: 200,
-		xPos: 730,
+		xPos: 750,
 		yPos: 250,
 		axisLineColour: "#ff0000",
 		barWidth: 20,
@@ -107,7 +105,6 @@ function setup() {
 		labelTextSize: 20,
 		labelPadding: 55,
 		labelColour: "#000099",
-		labelRotation: 45,
 		numTicks: 5,
 		titleTextSize: 14 
 
@@ -129,7 +126,6 @@ function setup() {
 		labelTextSize: 20,
 		labelPadding: 55,
 		labelColour: "#000099",
-		labelRotation: 45,
 		numTicks: 5,
 		titleTextSize: 14 
 
@@ -139,8 +135,8 @@ function setup() {
 		data:cleanData,
 		yValue: ["No other language (%)", "One language (%)", "Two languages (%)", "Three languages or more (%)"],
 		xValue: "Region",
-		xPos: 300,
-		yPos: 100,
+		xPos: 800,
+		yPos: 500,
 		diameter: 250
 		//axisLineColour: "#ff0000",
 		//barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
