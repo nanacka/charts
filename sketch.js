@@ -3,7 +3,7 @@ let cleanData = [];
 let barCharts = [];
 let numRows;
 
-let canvasWidth = 1000;
+let canvasWidth = 1300;
 let canvasHeight = 800;
 
 // Colours
@@ -44,7 +44,8 @@ function setup() {
 		labelPadding: 10,
 		labelColour: "#000099",
 		labelRotation: 45,
-		//numTicks: 5
+		numTicks: 5,
+		titleTextSize: 14 
 	}
 
 	let barChart02 = {
@@ -64,26 +65,30 @@ function setup() {
 		labelPadding: 10,
 		labelColour: "#000099",
 		labelRotation: 45,
-		//numTicks: 5
+		numTicks: 5,
+		titleTextSize: 14 
+
 	}
 
 	let stackedBarChart = {
 		data:cleanData,
-		//yValue: "No other language (%)",
+		yValue: ["No other language (%)", "One language (%)", "Two languages (%)", "Three languages or more (%)"],
 		xValue: "Region",
 		chartWidth: 200,
 		chartHeight: 200,
-		xPos: 550,
+		xPos: 730,
 		yPos: 250,
 		axisLineColour: "#ff0000",
 		barWidth: 20,
-		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00"],
-		barSections: ["No other language (%)", "One language (%)", "Two languages (%)", "Three languages or more (%)"],
+		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00"],	
 		axisThickness: 3,
 		labelTextSize: 20,
 		labelPadding: 10,
 		labelColour: "#000099",
-		labelRotation: 45
+		labelRotation: 45,
+		numTicks: 10,
+		titleTextSize: 14 
+
 	}
 
 	let horizontalBarChart = {
@@ -93,17 +98,19 @@ function setup() {
 		chartWidth: 200,
 		chartHeight: 200,
 		xPos: 100,
-		yPos: 350,
+		yPos: 400,
 		axisLineColour: "#ff0000",
 		barWidth: 20,
 		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
 		axisThickness: 1,
 		//barColour: "#416096"
 		labelTextSize: 20,
-		labelPadding: 70,
+		labelPadding: 55,
 		labelColour: "#000099",
 		labelRotation: 45,
-		//numTicks: 5
+		numTicks: 5,
+		titleTextSize: 14 
+
 	}
 
 	let horizontalBarChart02 = {
@@ -113,27 +120,28 @@ function setup() {
 		chartWidth: 200,
 		chartHeight: 200,
 		xPos: 400,
-		yPos: 350,
+		yPos: 400,
 		axisLineColour: "#ff0000",
 		barWidth: 20,
 		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
 		axisThickness: 1,
 		//barColour: "#416096"
 		labelTextSize: 20,
-		labelPadding: 70,
+		labelPadding: 55,
 		labelColour: "#000099",
 		labelRotation: 45,
-		//numTicks: 5
+		numTicks: 5,
+		titleTextSize: 14 
+
 	}
 
 	let pieChart = {
 		data:cleanData,
 		yValue: ["No other language (%)", "One language (%)", "Two languages (%)", "Three languages or more (%)"],
 		xValue: "Region",
-		//chartWidth: 200,
-		//chartHeight: 200,
-		xPos: 250,
+		xPos: 300,
 		yPos: 100,
+		diameter: 250
 		//axisLineColour: "#ff0000",
 		//barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
 		//axisThickness: 1,
@@ -142,26 +150,15 @@ function setup() {
 		//labelPadding: 70,
 		//labelColour: "#000099",
 	}
-	//console.log(cleanData);
-
-	//console.log(numRows);
-	//console.log(horizontalBarChart)
-
 	barCharts.push(new BarChart(barChart01));
 	barCharts.push(new BarChart(barChart02));
-
 	barCharts.push(new HorizontalBarChart(horizontalBarChart));
 	barCharts.push(new HorizontalBarChart(horizontalBarChart02));
-
 	barCharts.push(new StackedBarChart(stackedBarChart));
 	barCharts.push(new PieChart(pieChart));
-
-
 	console.log(barCharts)
 
 }
-
-
 
 function draw() {
 	background(backgroundColour);

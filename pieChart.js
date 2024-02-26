@@ -4,10 +4,9 @@ class PieChart{
 		this.data = obj.data;
 		this.yValue = obj.yValue;
 		this.xValue = obj.xValue;
-		//this.chartWidth = obj.chartWidth;
-		//this.chartHeight = obj.chartHeight;
 		this.xPos = obj.xPos;
 		this.yPos = obj.yPos;
+    this.diameter = obj.diameter;
 		//this.axisLineColour = obj.axisLineColour;
 		//this.Colour = obj.Colour;
 		//this.labelTextSize = obj.labelTextSize
@@ -17,6 +16,8 @@ class PieChart{
 	}
 
     render(){
+
+      
 
         let slices = this.yValue.length
         let sums = []
@@ -48,13 +49,22 @@ class PieChart{
         for(let k=0; k<sums.length; k++){
           let angle = 0;
           angle = (sums[k]/total)*360;
-          console.log(angle)
           angles.push(angle)
-          console.log(angles)
         }
 
         translate(this.xPos,this.yPos)
-        pieChart(300, angles);
+
+        for(let i=0; i<this.yValue.length; i++){
+          fill("#000000")
+                textSize(10);
+                textAlign(RIGHT, CENTER)
+          text(this.yValue[i], -80, -40*i)
+          fill("#000000")
+          rect(-70,(-40*i)-10,20,20)
+    
+        }
+        
+        pieChart(this.diameter, angles);
 
 
         function pieChart(diameter, data) {
