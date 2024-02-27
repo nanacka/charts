@@ -7,12 +7,9 @@ class PieChart{
 		this.xPos = obj.xPos;
 		this.yPos = obj.yPos;
     this.diameter = obj.diameter;
-		//this.axisLineColour = obj.axisLineColour;
-		//this.Colour = obj.Colour;
-		//this.labelTextSize = obj.labelTextSize
-		//this.labelPadding= obj.labelPadding;
-		//this.labelColour= obj.labelColour;
-		//this.axisThickness = obj.axisThickness;
+		this.sliceColour = obj.sliceColour;
+		this.labelTextSize = obj.labelTextSize
+		this.labelColour= obj.labelColour;
 	}
 
     render(){
@@ -46,18 +43,18 @@ class PieChart{
 
         let angles = [];
 
-        for(let k=0; k<sums.length; k++){
+        for(let i=0; i<sums.length; i++){
           let angle = 0;
-          angle = (sums[k]/total)*360;
+          angle = (sums[i]/total)*360;
           angles.push(angle)
         }
-
+        console.log(this.sliceColour)
 
         let percents = []
 
-        for(let k=0; k<sums.length; k++){
+        for(let i=0; i<sums.length; i++){
           let percent = 0;
-          percent = ((angles[k]/360)*100)+"%";
+          percent = ((angles[i]/360)*100);
           percents.push(percent)
           console.log(percents)
         }
@@ -66,29 +63,33 @@ class PieChart{
         translate(this.xPos,this.yPos)
 
         for(let i=0; i<this.yValue.length; i++){
-          fill("#000000")
+          //numbers are hard coded to relevant positions
+          noStroke();
+          fill(this.labelColour)
           textSize(10);
           textAlign(RIGHT, CENTER)
-          text(this.yValue[i], -50, -40*i)
-          let gray = map(i, 0, this.yValue.length, 0, 255);
-          fill(gray);
-          rect(-40,(-40*i)-10,20,20)
+          text(this.yValue[i], -210, -40*i)
+          //let gray = map(i, 0, this.yValue.length, 0, 255);
           textAlign(LEFT, CENTER)
-          text(percents[i], -10 , -40*i)
+          text(parseInt(percents[i])+"%", -170 , -40*i)
+          textAlign(CENTER)
+          textSize(this.labelTextSize)
+          text("TOTAL", 0, -140)
+          fill(this.sliceColour[i]);
+          rect(-200,(-40*i)-10,20,20)
     
         }
         
-        pieChart(this.diameter, angles);
 
 
-        function pieChart(diameter, data) {
+        const pieChart = (diameter, data) => {
           let lastAngle = 0;
           for (let i = 0; i < data.length; i++) {
             let gray = map(i, 0, data.length, 0, 255);
-            fill(gray);
+            fill(this.sliceColour[i]);
             arc(
-              width / 10,
-              height / 10,
+              0,
+              0,
               diameter,
               diameter,
               lastAngle,
@@ -97,6 +98,9 @@ class PieChart{
             lastAngle += radians(data[i]);
           }
         }
+
+        pieChart(this.diameter, angles);
+
 
     }
 }

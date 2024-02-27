@@ -7,20 +7,16 @@ let canvasWidth = 1300;
 let canvasHeight = 800;
 
 // Colours
-let backgroundColour = "#e3e3e3";
-
-
+let backgroundColour = "#201119";
 
 function preload() {
 	data = loadTable("data/languages_region_pivot.csv", "csv", "header");
-
 }
 
 function setup() {
 	createCanvas(canvasWidth, canvasHeight);
 	noLoop()
 	numRows = data.rows.length
-
 
 	for (let i = 0; i < numRows; i++) {
 		cleanData.push(data.rows[i].obj);
@@ -34,13 +30,13 @@ function setup() {
 		chartHeight: 200,
 		xPos: 50,
 		yPos: 250,
-		axisLineColour: "#ff0000",
+		axisLineColour: "#ffffff",
 		barWidth: 20,
-		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
+		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
 		axisThickness: 1,
 		labelTextSize: 20,
 		labelPadding: 10,
-		labelColour: "#000099",
+		labelColour: "#FFFFFF",
 		labelRotation: 45,
 		numTicks: 5,
 		titleTextSize: 14 
@@ -52,16 +48,15 @@ function setup() {
 		xValue: "Region",
 		chartWidth: 200,
 		chartHeight: 200,
-		xPos: 300,
+		xPos: 400,
 		yPos: 250,
-		axisLineColour: "#ff0000",
+		axisLineColour: "#ffffff",
 		barWidth: 20,
-		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
+		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
 		axisThickness: 1,
-		//barColour: "#416096"
 		labelTextSize: 20,
 		labelPadding: 10,
-		labelColour: "#000099",
+		labelColour: "#ffffff",
 		labelRotation: 45,
 		numTicks: 5,
 		titleTextSize: 14 
@@ -74,15 +69,15 @@ function setup() {
 		xValue: "Region",
 		chartWidth: 200,
 		chartHeight: 200,
-		xPos: 750,
+		xPos: 900,
 		yPos: 250,
-		axisLineColour: "#ff0000",
+		axisLineColour: "#ffffff",
 		barWidth: 20,
-		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00"],	
-		axisThickness: 3,
+		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
+		axisThickness: 1,
 		labelTextSize: 20,
 		labelPadding: 10,
-		labelColour: "#000099",
+		labelColour: "#ffffff",
 		labelRotation: 45,
 		numTicks: 10,
 		titleTextSize: 14 
@@ -97,14 +92,13 @@ function setup() {
 		chartHeight: 200,
 		xPos: 100,
 		yPos: 400,
-		axisLineColour: "#ff0000",
+		axisLineColour: "#ffffff",
 		barWidth: 20,
-		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
+		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
 		axisThickness: 1,
-		//barColour: "#416096"
 		labelTextSize: 20,
 		labelPadding: 55,
-		labelColour: "#000099",
+		labelColour: "#ffffff",
 		numTicks: 5,
 		titleTextSize: 14 
 
@@ -118,14 +112,13 @@ function setup() {
 		chartHeight: 200,
 		xPos: 400,
 		yPos: 400,
-		axisLineColour: "#ff0000",
+		axisLineColour: "#ffffff",
 		barWidth: 20,
-		barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
+		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
 		axisThickness: 1,
-		//barColour: "#416096"
 		labelTextSize: 20,
 		labelPadding: 55,
-		labelColour: "#000099",
+		labelColour: "#ffffff",
 		numTicks: 5,
 		titleTextSize: 14 
 
@@ -135,16 +128,12 @@ function setup() {
 		data:cleanData,
 		yValue: ["No other language (%)", "One language (%)", "Two languages (%)", "Three languages or more (%)"],
 		xValue: "Region",
-		xPos: 800,
+		xPos: 1000,
 		yPos: 500,
-		diameter: 250
-		//axisLineColour: "#ff0000",
-		//barColour: ["#0000ff", "#00ffff", "#ffff00", "#00ff00", "#0000ff", "#00ffff", "#ffff00", "#00ff00"],
-		//axisThickness: 1,
-		//Colour: "#416096"
-		//labelTextSize: 20,
-		//labelPadding: 70,
-		//labelColour: "#000099",
+		diameter: 250,
+		sliceColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
+		labelTextSize: 16,
+		labelColour: "#ffffff"
 	}
 	barCharts.push(new BarChart(barChart01));
 	barCharts.push(new BarChart(barChart02));

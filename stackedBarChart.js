@@ -23,6 +23,7 @@ class StackedBarChart {
 
 		translate(this.xPos, this.yPos);
 		for(let i=0; i<this.yValue.length; i++){
+			noStroke()
 			fill(this.labelColour)
             textSize(10);
             textAlign(RIGHT, CENTER)
@@ -34,8 +35,7 @@ class StackedBarChart {
 		noFill();
 		stroke(this.axisLineColour);
 		strokeWeight(this.axisThickness);
-		line(0, 0, 0, -this.chartHeight);
-		line(0, 0, this.chartWidth, 0);
+
 
 		let numBars = this.data.length;
 
@@ -69,6 +69,9 @@ class StackedBarChart {
             translate(gap+this.barWidth,0);
         }
         pop()
+
+		line(0, 0, 0, -this.chartHeight);
+		line(0, 0, this.chartWidth, 0);
 
         let tickValue = max(this.numTicks);
         let tickGap = (this.numTicks*2);

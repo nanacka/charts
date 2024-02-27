@@ -44,7 +44,7 @@ class BarChart {
         push()
         translate(gap,0);
         for(let i=0; i<numBars; i++){
-            fill(this.barColour[i])
+            fill(this.barColour[i % this.barColour.length])
             noStroke()
             rect (0,0,this.barWidth, -this.data[i][this.yValue]*scale);
             fill(this.labelColour)
@@ -63,6 +63,7 @@ class BarChart {
 
         let tickGap = this.chartHeight/this.numTicks;
         let tickValue = max(this.data.map(d=>d[this.yValue]));
+		let tickValueIncrement = tickValue / this.numTicks;
 
         for(let i=0; i<=this.numTicks; i++){
             stroke('#fff');
@@ -72,7 +73,7 @@ class BarChart {
             textSize(10);
             textAlign(RIGHT, CENTER);
 			fill(this.labelColour);
-            text((tickValue*i), -20, -tickGap*i);
+            text(parseInt(tickValueIncrement * i), -20, -tickGap*i);
 			
         }    
         pop ();

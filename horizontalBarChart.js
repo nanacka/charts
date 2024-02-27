@@ -33,8 +33,6 @@ class HorizontalBarChart {
 		stroke(this.axisLineColour);
 		strokeWeight(this.axisThickness);
 
-		line(0, 0, 0, this.chartHeight);
-		line(0, 0, this.chartWidth, 0);
 
 		let numBars = this.data.length;
 		let gap = (this.chartHeight - (numBars * this.barWidth))/(numBars +1);
@@ -46,7 +44,7 @@ class HorizontalBarChart {
 		
         for(let i=0; i<numBars; i++){
 			
-            fill(this.barColour[i])
+            fill(this.barColour[i % this.barColour.length])
             noStroke()
             rect (0,0, this.data[i][this.yValue]*scale, this.barWidth);
             fill(this.labelColour)
@@ -61,21 +59,26 @@ class HorizontalBarChart {
         }
         pop()
 
+		line(0, 0, 0, this.chartHeight);
+		line(0, 0, this.chartWidth, 0);
+
         let tickGap = this.chartHeight/this.numTicks;
         let tickValue = max(this.data.map(d=>d[this.yValue]));
+		let tickValueIncrement = tickValue / this.numTicks;
 
         for(let i=0; i<=this.numTicks; i++){			
 			stroke('#fff');
 			strokeWeight(this.axisThickness)			
-            line(i*tickGap,0, i*tickGap, -20);
+            line(i*tickGap,0, i*tickGap, -15);
 
 			noStroke();
             textSize(10);
             textAlign( CENTER);
 			fill(this.labelColour);
-            text(tickValue*i, tickGap*i, -20);
+            text(parseInt(tickValueIncrement * i), tickGap*i, -20);
         }     
         pop ();
+		
 	}
 
 }
