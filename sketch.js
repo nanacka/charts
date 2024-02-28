@@ -75,7 +75,7 @@ function setup() {
 		barWidth: 20,
 		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
 		axisThickness: 1,
-		labelTextSize: 20,
+		labelTextSize: 12,
 		labelPadding: 10,
 		labelColour: "#ffffff",
 		labelRotation: 45,
@@ -132,7 +132,7 @@ function setup() {
 		yPos: 500,
 		diameter: 250,
 		sliceColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
-		labelTextSize: 16,
+		labelTextSize: 12,
 		labelColour: "#ffffff"
 	}
 	barCharts.push(new BarChart(barChart01));

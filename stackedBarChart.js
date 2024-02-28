@@ -25,7 +25,7 @@ class StackedBarChart {
 		for(let i=0; i<this.yValue.length; i++){
 			noStroke()
 			fill(this.labelColour)
-            textSize(10);
+            textSize(this.labelTextSize);
             textAlign(RIGHT, CENTER)
 			text(this.yValue[i], -80, -40*i)
 			fill(this.barColour[i])
