@@ -52,7 +52,7 @@ function setup() {
 		yPos: 250,
 		axisLineColour: "#ffffff",
 		barWidth: 20,
-		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
+		barColour:  ['#1F3940', '#246758', '#53BF90', '#BFF1BC'],
 		axisThickness: 1,
 		labelTextSize: 20,
 		labelPadding: 10,
@@ -94,7 +94,7 @@ function setup() {
 		yPos: 400,
 		axisLineColour: "#ffffff",
 		barWidth: 20,
-		barColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
+		barColour:  ['#1F3940', '#246758', '#53BF90', '#BFF1BC'],
 		axisThickness: 1,
 		labelTextSize: 20,
 		labelPadding: 55,
@@ -131,7 +131,7 @@ function setup() {
 		xPos: 1000,
 		yPos: 500,
 		diameter: 250,
-		sliceColour: ['#563166', '#805A99', '#A0A9E6', '#D2E1F0'],
+		sliceColour: ['#1F3940', '#246758', '#53BF90', '#BFF1BC'],
 		labelTextSize: 12,
 		labelColour: "#ffffff"
 	}
